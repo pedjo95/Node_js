@@ -7,8 +7,11 @@ const router = express.Router();
 
 // connecting to db
 mongoose.connect(
-  "mongodb+srv://pedro@cluster0-oa8p7.azure.mongodb.net/admin?replicaSet=Cluster0-shard-0&readPreference=primary&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=Cluster0-shard-0&3t.databases=admin,test"
+  "mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&3t.uriVersion=3&3t.connection.name=Starter"
 );
+
+// loading the model
+const Product = require("./models/product");
 
 // loading routes
 const indexRoute = require("./routes/index-route");
